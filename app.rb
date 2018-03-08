@@ -11,7 +11,8 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $session = Session.new(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
+    $session = Session.new(Player.new(params[:player_1_name]),
+    Player.new(params[:player_2_name]))
     redirect '/play'
   end
 

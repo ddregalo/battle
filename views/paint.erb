@@ -1,3 +1,7 @@
-<h5><%= @session.player_1.name %> painted <%= @session.player_2.name %></h5>
-<h5><%= @session.player_1.name %>: <%= @session.player_1.paint_points %> Paint Points</h5>
-<h5><%= @session.player_2.name %>: <%= @session.player_2.paint_points %> Paint Points</h5>
+<h2><%= @session.player_1.name %> painted <%= @session.player_2.name %></h2>
+<h4><%= @session.player_1.name %>: <%= @session.player_1.paint_points %> Paint Points</h4>
+<h4><%= @session.player_2.name %>: <%= @session.player_2.paint_points %> Paint Points</h4>
+
+<form action='/switch-turns' method='post'>
+  <input type="submit" value='PLAY NEXT TURN'>
+</form>

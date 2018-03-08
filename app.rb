@@ -26,6 +26,13 @@ class Battle < Sinatra::Base
     @session.paint(@session.player_2)
     erb :paint
   end
+
+  post '/switch-turns' do
+    @session = $session
+    @session.switch_turns
+    redirect '/play'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

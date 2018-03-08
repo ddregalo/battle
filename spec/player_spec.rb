@@ -9,6 +9,11 @@ describe Player do
     expect(rothko.name).to eq "Rothko"
   end
 
+  it 'initializes both players with 100 paint points' do
+    expect(samo.paint_points).to eq 100
+    expect(samo.paint_points).to eq 100
+  end
+
   describe '#paint' do
     it 'should call the reduce_points method on opponent' do
       expect(rothko).to receive(:reduce_points)

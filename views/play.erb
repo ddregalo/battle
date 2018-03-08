@@ -1,10 +1,19 @@
-<% if @player_1 && @player_2  %>
-<h3><%= @player_1.name %> vs. <%= @player_2.name %></h3>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Art Battle</title>
+  </head>
+  <body>
+    <% if @session.player_1 && @session.player_2 %>
+    <h3><%= @session.player_1.name %> vs. <%= @session.player_2.name %></h3>
+    <% end %>
 
-<h5> <%= @player_1.name %>: <%= @player_1.paint_points %> Paint Points</h5>
-<h5> <%= @player_2.name %>: <%= @player_1.paint_points %> Paint Points</h5>
+    <h5> <%= @session.player_1.name %>: <%= @session.player_1.paint_points %> Paint Points</h5>
+    <h5> <%= @session.player_2.name %>: <%= @session.player_2.paint_points %> Paint Points</h5>
 
-<form action ="/paint" method="get">
-  <input type="submit" value="PAINT">
-</form>
+    <form action ="/paint" method="get">
+      <input type="submit" value="PAINT">
+    </form>
+  </body>
+</html>

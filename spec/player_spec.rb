@@ -14,16 +14,9 @@ describe Player do
     expect(samo.paint_points).to eq 100
   end
 
-  describe '#paint' do
-    it 'should call the reduce_points method on opponent' do
-      expect(rothko).to receive(:reduce_points)
-      samo.paint(rothko)
-    end
-  end
-
   describe '#reduce_points' do
     it 'should reduce paint points by 10' do
-      samo.paint(rothko)
+      rothko.reduce_points
       expect(rothko.paint_points).to eq 90
     end
   end

@@ -8,10 +8,6 @@ class Player
     @paint_points = paint_points
   end
 
-  def paint(player)
-    player.reduce_points
-  end
-  
   def reduce_points
     @paint_points -= 10
   end

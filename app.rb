@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/session'
 
 class Battle < Sinatra::Base
 
@@ -26,7 +27,7 @@ class Battle < Sinatra::Base
   get '/paint' do
     @player_1 = $player_1
     @player_2 = $player_2
-    @player_1.paint(@player_2)
+    Session.new.paint(@player_2)
     erb :paint
   end
   # start the server if ruby file executed directly

@@ -11,4 +11,14 @@ feature 'Player Attack' do
     expect(page).to have_content "Samo: 100 Paint Points"
     expect(page).to have_content "Rothko: 90 Paint Points"
   end
+
+  scenario 'ends session if a player has zero points' do
+    sign_in_and_play
+    18.times do
+      click_button "PAINT"
+      click_button "PLAY NEXT TURN"
+    end
+    click_button "PAINT"
+    expect(page).to have_content "Rothko just got PAINTED!!"
+  end
 end

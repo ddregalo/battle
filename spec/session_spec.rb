@@ -10,22 +10,20 @@ describe Session do
   end
 
   it 'should initialize turn with player_1' do
-    expect(subject.turn).to eq subject.player_1
+    expect(subject.current_turn).to eq subject.player_1
   end
 
   describe '#paint' do
     it 'should run the paint method on a player' do
-      expect(player_2).to receive(:reduce_points)
+      expect(player_1).to receive(:reduce_points)
       subject.paint(player_2)
     end
   end
 
   describe '#switch_turns' do
     it 'should swtich player turns after paint method' do
-      subject.switch_turns
-      expect(subject.turn).to eq (player_2)
+      expect(subject.switch_turns).to eq (player_2)
     end
   end
-
 
 end

@@ -6,13 +6,13 @@
   </head>
   <body>
     <% if @session.player_1 && @session.player_2 %>
-    <h2><%= @session.player_1.name %> vs. <%= @session.player_2.name %></h2>
+      <h2><%= @session.player_1.name %> vs. <%= @session.player_2.name %></h2>
     <% end %>
 
     <h4> <%= @session.player_1.name %>: <%= @session.player_1.paint_points %> Paint Points</h4>
     <h4> <%= @session.player_2.name %>: <%= @session.player_2.paint_points %> Paint Points</h4>
 
-    <h3> <%= @session.turn.name %>'s Turn </h3>
+    <h3> <%= @session.current_turn.name %>'s Turn </h3>
 
     <form action ="/paint" method="get">
       <input type="submit" value="PAINT">

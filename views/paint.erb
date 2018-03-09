@@ -1,4 +1,8 @@
-<h2><%= @session.player_1.name %> painted <%= @session.player_2.name %></h2>
+<% if @session.current_turn == @session.player_1.name %>
+  <h2><%= @session.player_2.name %> painted <%= @session.player_1.name %></h2>
+<% else %>
+  <h2><%= @session.player_1.name %> painted <%= @session.player_2.name %></h2>
+<% end %>
 <h4><%= @session.player_1.name %>: <%= @session.player_1.paint_points %> Paint Points</h4>
 <h4><%= @session.player_2.name %>: <%= @session.player_2.paint_points %> Paint Points</h4>
 

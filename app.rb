@@ -23,7 +23,7 @@ class Battle < Sinatra::Base
 
   get '/paint' do
     @session = $session
-    @session.paint(@session.player_2)
+    @session.paint(@session.current_turn)
     erb :paint
   end
 

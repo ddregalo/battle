@@ -1,22 +1,25 @@
 class Session
 
-  attr_reader :player_1, :player_2, :turn
+  attr_reader :player_1, :player_2, :current_turn
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @turn = player_1
+    @players = [@player_1, @player_2]
+    @current_turn = @players.first
   end
 
   def paint(player)
-    player.reduce_points
+    opponent_of(player).reduce_points
   end
 
   def switch_turns
-    if @turn == @player_1
-      @turn = @player_2
-    else
-      @turn = @player_1
-    end
+    @current_turn = opponent_of(@current_turn)
   end
+
+  private
+    def opponent_of(nowplayer)
+    opponent = @players.select { |player| nowplayer != player }
+    opponent[0]
+    end
 end
